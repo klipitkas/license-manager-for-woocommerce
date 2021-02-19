@@ -1,3 +1,8 @@
+##### 2.2.2 - 2020-02-19
+* Update - WordPress 5.6 compatibility
+* Update - WooCommerce 5.0 compatibility
+* Fix - The "Licenses" page no longer causes a blank page or PHP memory_limit error when a large amount of orders and licenses is present in the database.
+
 ##### 2.2.1 - 2020-10-03
 * Update - WordPress 5.5 compatibility
 * Update - WooCommerce 4.5 compatibility
