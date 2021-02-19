@@ -213,23 +213,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     if (dropdownOrders) {
-        dropdownOrders.select2({
-            allowClear: true,
-            placeholder: i18n.placeholderFilterByOrder
-        });
+        dropdownOrders.select2(orderDropdownSearchConfig);
     }
 
     if (dropdownProducts) {
-        dropdownProducts.select2({
-            allowClear: true,
-            placeholder: i18n.placeholderFilterByProduct
-        });
+        dropdownProducts.select2(productDropdownSearchConfig);
     }
 
     if (dropdownUsers) {
-        dropdownUsers.select2({
-            allowClear: true,
-            placeholder: i18n.placeholderFilterByUser
-        });
+        dropdownUsers.select2(userDropdownSearchConfig);
     }
 });

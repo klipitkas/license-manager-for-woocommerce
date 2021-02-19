@@ -148,10 +148,7 @@ final class Main extends Singleton
                 array(
                     'placeholderSearchOrders'    => __('Search by order ID or customer email', 'license-manager-for-woocommerce'),
                     'placeholderSearchProducts'  => __('Search by product ID or product name', 'license-manager-for-woocommerce'),
-                    'placeholderSearchUsers'     => __('Search by user login, name or email', 'license-manager-for-woocommerce'),
-                    'placeholderFilterByOrder'   => __('Filter by order', 'license-manager-for-woocommerce'),
-                    'placeholderFilterByProduct' => __('Filter by product', 'license-manager-for-woocommerce'),
-                    'placeholderFilterByUser'    => __('Filter by user', 'license-manager-for-woocommerce')
+                    'placeholderSearchUsers'     => __('Search by user login, name or email', 'license-manager-for-woocommerce')
                 )
             );
 

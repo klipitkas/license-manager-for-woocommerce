@@ -242,3 +242,11 @@ table.wp-list-table.lizenzschlssel span.lmfwc-date {
 	background-color: var(--color-info);
 	color: #ffffff;
 }
+
+/** Licenses page dropdown width fix **/
+.wrap.lmfwc #filter-by-order-id + .select2-container,
+.wrap.lmfwc #filter-by-user-id + .select2-container,
+.wrap.lmfwc #filter-by-product-id + .select2-container {
+	width: auto !important;
+	max-width: 10rem;
+}

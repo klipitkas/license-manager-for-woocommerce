@@ -424,9 +424,9 @@ class Controller extends AbstractIntegrationController implements IntegrationCon
                 // Order exists.
                 if ($order && $order instanceof WC_Order) {
                     $text = sprintf(
-                        /* translators: $1: order id, $2: customer name, $3: customer email */
+                    /* translators: $1: order id, $2: customer name, $3: customer email */
                         '#%1$s %2$s <%3$s>',
-                        $order->get_id(),
+                        $order->get_order_number(),
                         $order->get_formatted_billing_full_name(),
                         $order->get_billing_email()
                     );
@@ -446,7 +446,7 @@ class Controller extends AbstractIntegrationController implements IntegrationCon
                 // Product exists.
                 if ($product) {
                     $text = sprintf(
-                        /* translators: $1: order id, $2 customer name */
+                    /* translators: $1: order id, $2 customer name */
                         '(#%1$s) %2$s',
                         $product->get_id(),
                         $product->get_formatted_name()
@@ -475,7 +475,7 @@ class Controller extends AbstractIntegrationController implements IntegrationCon
                     $results[] = array(
                         'id' => $user->ID,
                         'text' => sprintf(
-                            /* translators: $1: user nicename, $2: user id, $3: user email */
+                        /* translators: $1: user nicename, $2: user id, $3: user email */
                             '%1$s (#%2$d - %3$s)',
                             $user->user_nicename,
                             $user->ID,
@@ -508,7 +508,7 @@ class Controller extends AbstractIntegrationController implements IntegrationCon
                     $text = sprintf(
                     /* translators: $1: order id, $2 customer name, $3 customer email */
                         '#%1$s %2$s <%3$s>',
-                        $order->get_id(),
+                        $order->get_order_number(),
                         $order->get_formatted_billing_full_name(),
                         $order->get_billing_email()
                     );

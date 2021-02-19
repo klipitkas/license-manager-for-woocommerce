@@ -159,53 +159,22 @@ class LicensesList extends WP_List_Table
      */
     public function orderDropdown()
     {
-        global $wpdb;
+        $order = false;
 
-        $orders = array();
-        $results = $wpdb->get_results(
-            "SELECT DISTINCT `order_id` FROM {$this->table} WHERE `order_id` IS NOT NULL ORDER BY order_id;",
-            ARRAY_A
-        );
-
-        foreach ($results as $result) {
-            if (!$orderId = intval($result['order_id'])) {
-                continue;
-            }
-
-            if (!$order = wc_get_order($orderId)) {
-                continue;
-            }
-
-            array_push(
-                $orders,
-                array(
-                    'value' => $orderId,
-                    'label' => $order->get_formatted_billing_full_name()
-                )
-            );
+        if (isset($_REQUEST['order-id'])) {
+            $order = wc_get_order((int)$_REQUEST['order-id']);
         }
 
-        if (count($orders) === 0) {
-            return $orders;
-        }
-
-        $selectedOrder = isset($_REQUEST['order-id']) ? $_REQUEST['order-id'] : '';
         ?>
         <label for="filter-by-order-id" class="screen-reader-text">
             <span><?php _e('Filter by order', 'license-manager-for-woocommerce'); ?></span>
         </label>
         <select name="order-id" id="filter-by-order-id">
-            <option <?php selected($selectedOrder, ''); ?> value=""></option>
-            <?php
-            foreach ($orders as $order) {
-                printf(
-                    '<option%1$s value="%2$s">%3$s</option>',
-                    selected($selectedOrder, $order['value'], false),
-                    esc_attr($order['value']),
-                    esc_html('#' . $order['value'] . ' ' . $order['label'])
-                );
-            }
-            ?>
+            <?php if ($order): ?>
+                <option selected="selected" value="<?php echo esc_attr($order->get_id()); ?>">
+                    <?php echo $order->get_formatted_billing_full_name(); ?>
+                </option>
+            <?php endif; ?>
         </select>
         <?php
     }
@@ -215,54 +184,22 @@ class LicensesList extends WP_List_Table
      */
     public function productDropdown()
     {
-        global $wpdb;
+        $product = false;
 
-        $products = array();
-        $results  = $wpdb->get_results(
-            "SELECT DISTINCT `product_id` FROM {$this->table} WHERE `product_id` IS NOT NULL ORDER BY product_id;",
-            ARRAY_A
-        );
-
-        foreach ($results as $result) {
-            if (!$productId = intval($result['product_id'])) {
-                continue;
-            }
-
-            /** @var $product WC_Product */
-            if (!$product = wc_get_product($productId)) {
-                continue;
-            }
-
-            array_push(
-                $products,
-                array(
-                    'value' => $productId,
-                    'label' => sprintf('%s', $product->get_name())
-                )
-            );
+        if (isset($_REQUEST['product-id'])) {
+            $product = wc_get_product((int)$_REQUEST['product-id']);
         }
 
-        if (count($products) === 0) {
-            return $products;
-        }
-
-        $selectedProduct = isset($_REQUEST['product-id']) ? $_REQUEST['product-id'] : '';
         ?>
         <label for="filter-by-product-id" class="screen-reader-text">
             <span><?php _e('Filter by product', 'license-manager-for-woocommerce'); ?></span>
         </label>
         <select name="product-id" id="filter-by-product-id">
-            <option <?php selected($selectedProduct, ''); ?> value=""></option>
-            <?php
-            foreach ($products as $product) {
-                printf(
-                    '<option%1$s value="%2$s">%3$s</option>',
-                    selected($selectedProduct, $product['value'], false),
-                    esc_attr($product['value']),
-                    esc_html('#' . $product['value'] . ' ' . $product['label'])
-                );
-            }
-            ?>
+            <?php if ($product): ?>
+                <option selected="selected" value="<?php echo esc_attr($product->get_id()); ?>">
+                    <?php echo $product->get_name(); ?>
+                </option>
+            <?php endif; ?>
         </select>
         <?php
     }
@@ -272,51 +209,25 @@ class LicensesList extends WP_List_Table
      */
     public function userDropdown()
     {
-        global $wpdb;
+        $user = false;
 
-        $users = array();
-        $results  = $wpdb->get_results(
-            "SELECT DISTINCT `user_id` FROM {$this->table} WHERE `user_id` IS NOT NULL ORDER BY user_id;",
-            ARRAY_A
-        );
-
-        foreach ($results as $result) {
-            if (!$userId = intval($result['user_id'])) {
-                continue;
-            }
-
-            /** @var $user WP_User */
-            if (!$user = get_userdata($userId)) {
-                continue;
-            }
-
-            array_push($users, $user);
+        if (isset($_REQUEST['user-id'])) {
+            $user = get_user_by('ID', (int)$_REQUEST['user-id']);
         }
-
-        if (count($users) === 0) {
-            return $users;
-        }
-
-        $selectedUser = isset($_REQUEST['user-id']) ? $_REQUEST['user-id'] : '';
         ?>
         <label for="filter-by-user-id" class="screen-reader-text">
             <span><?php _e('Filter by user', 'license-manager-for-woocommerce'); ?></span>
         </label>
         <select name="user-id" id="filter-by-user-id">
-            <option <?php selected($selectedUser, ''); ?> value=""></option>
-            <?php
-            /** @var WP_User $user */
-            foreach ($users as $user) {
+            <?php if ($user) {
                 printf(
-                    '<option value="%d" %s>%s (#%d - %s)</option>',
+                    '<option value="%d" selected="selected">%s (#%d - %s)</option>',
                     $user->ID,
-                    selected($selectedUser, $user->ID, false),
                     $user->display_name,
                     $user->ID,
                     $user->user_email
                 );
-            }
-            ?>
+            } ?>
         </select>
         <?php
     }
