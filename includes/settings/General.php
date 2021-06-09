@@ -526,7 +526,7 @@ class General
             array(
                 'id'         => '020',
                 'name'       => 'v2/generators/{id}',
-                'method'     => 'GET',
+                'method'     => 'PUT',
                 'deprecated' => false,
             ),
         );
