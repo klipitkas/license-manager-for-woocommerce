@@ -258,21 +258,21 @@ class APIKeyList extends WP_List_Table
     /**
      * Search box.
      *
-     * @param string $text    Button text
-     * @param string $inputId Input ID
+     * @param string $text     Button text
+     * @param string $input_id Input ID
      */
-    public function search_box($text, $inputId)
+    public function search_box($text, $input_id)
     {
         if (empty($_REQUEST['s']) && ! $this->has_items()) {
             return;
         }
 
-        $inputId     = $inputId . '-search-input';
+        $input_id    = $input_id . '-search-input';
         $searchQuery = isset($_REQUEST['s']) ? sanitize_text_field(wp_unslash($_REQUEST['s'])) : '';
 
         echo '<p class="search-box">';
-        echo '<label class="screen-reader-text" for="' . esc_attr($inputId) . '">' . esc_html($text) . ':</label>';
-        echo '<input type="search" id="' . esc_attr($inputId) . '" name="s" value="' . esc_attr($searchQuery) . '" />';
+        echo '<label class="screen-reader-text" for="' . esc_attr($input_id) . '">' . esc_html($text) . ':</label>';
+        echo '<input type="search" id="' . esc_attr($input_id) . '" name="s" value="' . esc_attr($searchQuery) . '" />';
 
         submit_button(
             $text, '', '', false,

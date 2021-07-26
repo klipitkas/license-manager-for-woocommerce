@@ -729,16 +729,16 @@ class LicensesList extends WP_List_Table
     /**
      * Default column value.
      *
-     * @param array  $item       Associative array of column name and value pairs
-     * @param string $columnName Name of the current column
+     * @param array  $item        Associative array of column name and value pairs
+     * @param string $column_name Name of the current column
      *
      * @return string
      */
-    public function column_default($item, $columnName)
+    public function column_default($item, $column_name)
     {
-        $item = apply_filters('lmfwc_table_licenses_column_value', $item, $columnName);
+        $item = apply_filters('lmfwc_table_licenses_column_value', $item, $column_name);
 
-        return $item[$columnName];
+        return $item[$column_name];
     }
 
     /**
@@ -1138,20 +1138,20 @@ class LicensesList extends WP_List_Table
      * Displays the search box.
      *
      * @param string $text
-     * @param string $inputId
+     * @param string $input_id
      */
-    public function search_box($text, $inputId)
+    public function search_box($text, $input_id)
     {
         if (empty($_REQUEST['s']) && !$this->has_items()) {
             return;
         }
 
-        $inputId     = $inputId . '-search-input';
+        $input_id    = $input_id . '-search-input';
         $searchQuery = isset($_REQUEST['s']) ? sanitize_text_field(wp_unslash($_REQUEST['s'])) : '';
 
         echo '<p class="search-box">';
-        echo '<label class="screen-reader-text" for="' . esc_attr( $inputId ) . '">' . esc_html( $text ) . ':</label>';
-        echo '<input type="search" id="' . esc_attr($inputId) . '" name="s" value="' . esc_attr($searchQuery) . '" />';
+        echo '<label class="screen-reader-text" for="' . esc_attr( $input_id ) . '">' . esc_html( $text ) . ':</label>';
+        echo '<input type="search" id="' . esc_attr($input_id) . '" name="s" value="' . esc_attr($searchQuery) . '" />';
 
         submit_button(
             $text, '', '', false,
