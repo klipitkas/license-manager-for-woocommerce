@@ -33,11 +33,6 @@ defined('ABSPATH') || exit;
 final class Main extends Singleton
 {
     /**
-     * @var string
-     */
-    public $version = '2.2.0';
-
-    /**
      * Main constructor.
      *
      * @return void
@@ -63,7 +58,6 @@ final class Main extends Singleton
             define('ABSPATH_LENGTH', strlen(ABSPATH));
         }
 
-        define('LMFWC_VERSION',         $this->version);
         define('LMFWC_ABSPATH',         dirname(LMFWC_PLUGIN_FILE) . '/');
         define('LMFWC_PLUGIN_BASENAME', plugin_basename(LMFWC_PLUGIN_FILE));
 
@@ -110,7 +104,7 @@ final class Main extends Singleton
             'lmfwc_admin_css',
             LMFWC_CSS_URL . 'main.css',
             array(),
-            $this->version
+            LMFWC_VERSION
         );
 
         // JavaScript
@@ -118,7 +112,7 @@ final class Main extends Singleton
             'lmfwc_admin_js',
             LMFWC_JS_URL . 'script.js',
             array(),
-            $this->version
+            LMFWC_VERSION
         );
 
         // jQuery UI

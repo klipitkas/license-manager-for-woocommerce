@@ -33,6 +33,11 @@ if (!defined('LMFWC_PLUGIN_URL')) {
     define('LMFWC_PLUGIN_URL', plugins_url('', __FILE__) . '/');
 }
 
+// Define LMFWC_VERSION.
+if (!defined('LMFWC_VERSION')) {
+    define('LMFWC_VERSION', '2.2.3');
+}
+
 /**
  * Main instance of LicenseManagerForWooCommerce.
  *
