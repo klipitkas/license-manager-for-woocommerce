@@ -1,3 +1,7 @@
+##### 2.2.4 - 2021-07-26
+* Update - WordPress 5.8 compatibility
+* Update - WooCommerce 5.5 compatibility
+
 ##### 2.2.3 - 2021-06-08
 * Update - WordPress 5.7 compatibility
 * Update - WooCommerce 5.4 compatibility
