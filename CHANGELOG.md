@@ -1,3 +1,7 @@
+##### 2.2.5 - 2021-10-21
+* Update - Freemius Integrated
+* Update - PHP 7.0 compatibility
+
 ##### 2.2.4 - 2021-07-26
 * Update - WordPress 5.8 compatibility
 * Update - WooCommerce 5.5 compatibility
