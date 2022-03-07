@@ -1,10 +1,9 @@
 ﻿=== License Manager for WooCommerce ===
-Contributors: drazenbebic
-Donate link: https://www.licensemanager.at/donate/
+Contributors: wpexpertsio
 Tags: license key, license, key, software license, serial key, manager, woocommerce, wordpress
 Requires at least: 4.7
-Tested up to: 5.8
-Stable tag: 2.2.4
+Tested up to: 5.9.1
+Stable tag: 2.2.6
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -30,21 +29,13 @@ The **License Manager for WooCommerce** allows you to easily sell and manage all
 
 #### API
 
-The plugin also offers additional endpoints for manipulating licenses and generator resources. These routes are authorized via API keys (generated through the plugin settings) and accessed via the WordPress API. An extensive [API documentation](https://www.licensemanager.at/docs/rest-api/v2/) is also available.
+The plugin also offers additional endpoints for manipulating licenses and generator resources. These routes are authorized via API keys (generated through the plugin settings) and accessed via the WordPress API. An extensive [API documentation](https://www.licensemanager.at/docs/rest-api/getting-started/requirements) is also available.
 
 #### Need help?
 
-If you have any feature requests, need more hooks, or maybe have even found a bug, please let us know in the support forum or e-mail us at <support@licensemanager.at>. We look forward to hearing from you!
+If you have any feature requests, need more hooks, or maybe have even found a bug, please let us know in the support forum or e-mail us at <support@wpexperts.io>. We look forward to hearing from you!
 
-You can also check out the [documentation pages](https://www.licensemanager.at/docs/handbook/), as they contain the most essential information on what the plugin can do for you.
-
-#### How can I support the development?
-
-This plugin is, and will always remain a 100% free. If you still wish to support the plugin, you can do so via donations. We currently accept **Dogecoin** and **Bitcoin**, as well as **PayPal**.
-
-Half of the proceeds from these donations will be forwarded to **SOS Children's Village**.
-
-More information about how to contribute [can be found on the plugin website](https://www.licensemanager.at/donate). Thank you for your support!
+You can also check out the [documentation pages](https://www.licensemanager.at/docs/), as they contain the most essential information on what the plugin can do for you.
 
 #### Important
 
@@ -77,7 +68,7 @@ Yes, there is! An extensive documentation describing the plugin features and fun
 
 = What about the API documentation? =
 
-Again, yes! Here you can find the [API Documentation](https://www.licensemanager.at/docs/rest-api/v2/) detailing all the new endpoint requests and responses. Have fun!
+Again, yes! Here you can find the [API Documentation](https://www.licensemanager.at/docs/rest-api/getting-started/requirements) detailing all the new endpoint requests and responses. Have fun!
 
 = Does the plugin work with variable products? =
 
