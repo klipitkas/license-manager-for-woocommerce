@@ -1,3 +1,6 @@
+##### 2.2.6 - 2022-03-07
+* Update - Freemius SDK version 2.4.3
+
 ##### 2.2.5 - 2021-10-21
 * Update - Freemius Integrated
 * Update - PHP 7.0 compatibility
