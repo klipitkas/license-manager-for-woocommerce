@@ -1,4 +1,5 @@
 <?php
+
 /**
  * LicenseManager for WooCommerce Meta Functions
  *
@@ -134,7 +135,7 @@ function lmfwc_update_license_meta($licenseId, $metaKey, $metaValue, $previousVa
     $metaLicense = LicenseMetaResourceRepository::instance()->findBy($selectQuery);
 
     if (!$metaLicense) {
-        return false;
+        return lmfwc_add_license_meta($licenseId, $metaKey, maybe_serialize($metaValue));
     }
 
     $updateCount = LicenseMetaResourceRepository::instance()->updateBy($updateQueryCondition, $updateQueryData);
